@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Styled Webpage</title>
+<style>
+
+  /* ---------- CSS Syntax / Selectors / Fonts ---------- */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #222;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    background: linear-gradient(135deg, #4b6cb7, #182848); /* Gradient background */
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text Shadow */
+  }
+
+  header h1 {
+    font-size: 2.5em;
+    font-family: 'Georgia', serif;
+    margin: 0;
+  }
+
+  header p {
+    font-size: 1.1em;
+    font-family: Arial, sans-serif;
+    margin-top: 10px;
+  }
+
+  /* ---------- Navigation Bar ---------- */
+  nav {
+    background-color: #182848;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Box Shadow */
+  }
+
+  nav a {
+    color: #f0f2f5;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.1em;
+    font-family: 'Trebuchet MS', sans-serif;
+    padding: 8px 12px;
+    border-radius: 6px; /* Rounded Corners */
+    transition: all 0.3s ease;
+  }
+
+  nav a:hover {
+    background-color: #4b6cb7;
+    color: #ffe066;
+    text-shadow: 1px 1px 3px #000; /* Hover text shadow */
+  }
+
+  /* ---------- Canvas Section ---------- */
+  .canvas-section {
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  canvas {
+    background-color: #ffffff;
+    border: 3px solid #4b6cb7; /* Border */
+    border-radius: 12px; /* Rounded Corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Box Shadow */
+  }
+
+  /* ---------- Content Cards ---------- */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 30px 20px;
+  }
+
+  .card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 15px; /* Rounded Corners */
+    padding: 20px;
+    margin: 10px;
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Box Shadow */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .card h3 {
+    font-family: 'Trebuchet MS', sans-serif;
+    color: #182848;
+  }
+
+  .card p {
+    font-family: Arial, sans-serif;
+    font-size: 0.95em;
+    color: #555;
+  }
+
+  .card button {
+    background: linear-gradient(135deg, #4b6cb7, #182848); /* Gradient background */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px; /* Rounded Corners */
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .card button:hover {
+    background: #ffe066;
+    color: #182848;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Hover Box Shadow */
+    transform: scale(1.05);
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background-color: #182848;
+    color: #f0f2f5;
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 0.9em;
+    margin-top: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- ---------- Header ---------- -->
+  <header>
+    <h1>My Styled Webpage</h1>
+    <p>HTML5 Canvas &amp; CSS3 Styling Demo</p>
+  </header>
+
+  <!-- ---------- Navigation Bar ---------- -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- ---------- Part A: HTML5 Canvas ---------- -->
+  <section class="canvas-section">
+    <h2>Part A: HTML5 Canvas Drawing</h2>
+    <canvas id="myCanvas" width="400" height="250"></canvas>
+  </section>
+
+  <script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Rectangle
+    ctx.fillStyle = '#4b6cb7';
+    ctx.fillRect(30, 30, 120, 70);
+
+    // Circle
+    ctx.beginPath();
+    ctx.arc(280, 65, 45, 0, Math.PI * 2);
+    ctx.fillStyle = '#ffe066';
+    ctx.fill();
+    ctx.strokeStyle = '#182848';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Line
+    ctx.beginPath();
+    ctx.moveTo(30, 150);
+    ctx.lineTo(370, 150);
+    ctx.strokeStyle = '#182848';
+    ctx.lineWidth = 4;
+    ctx.stroke();
+
+    // Text - Name
+    ctx.font = 'bold 24px Georgia';
+    ctx.fillStyle = '#182848';
+    ctx.fillText('Your Name Here', 90, 200);
+  </script>
+
+  <!-- ---------- Part B: Content Cards ---------- -->
+  <div class="card-container">
+    <div class="card">
+      <h3>Card One</h3>
+      <p>This card demonstrates rounded corners, box shadow, and hover effects.</p>
+      <button>Learn More</button>
+    </div>
+    <div class="card">
+      <h3>Card Two</h3>
+      <p>This card uses gradients, padding, and margin for clean spacing.</p>
+      <button>Learn More</button>
+    </div>
+    <div class="card">
+      <h3>Card Three</h3>
+      <p>This card showcases font variety and smooth transition effects.</p>
+      <button>Learn More</button>
+    </div>
+  </div>
+
+  <!-- ---------- Footer ---------- -->
+  <footer>
+    &copy; 2026 My Styled Webpage. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
