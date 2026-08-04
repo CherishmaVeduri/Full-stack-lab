@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quiz</title>
+</head>
+
+<body>
+
+<h2>
+What is the capital of India?
+</h2>
+
+<input type="radio" name="q" value="Mumbai">Mumbai
+
+<br><br>
+
+<input type="radio" name="q" value="Delhi">Delhi
+
+<br><br>
+
+<input type="radio" name="q" value="Hyderabad">Hyderabad
+
+<br><br>
+
+<button onclick="checkAnswer()">
+Submit
+</button>
+
+<h2 id="result"></h2>
+
+<script>
+
+function checkAnswer()
+{
+    let answer=document.getElementsByName("q");
+
+    for(let i=0;i<answer.length;i++)
+    {
+        if(answer[i].checked)
+        {
+            if(answer[i].value=="Delhi")
+                document.getElementById("result").innerHTML=
+                "Correct Answer";
+            else
+                document.getElementById("result").innerHTML=
+                "Wrong Answer";
+        }
+    }
+}
+
+</script>
+
+</body>
+</html>
